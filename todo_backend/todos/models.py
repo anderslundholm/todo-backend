@@ -15,6 +15,7 @@ class Todo(models.Model):
 
 class Entry(models.Model):
     text_entry = models.TextField(blank=True, default='')
+    completed = models.BooleanField(default=False)
     todo = models.ForeignKey(Todo, related_name='entries',
                              on_delete=models.CASCADE)
 
